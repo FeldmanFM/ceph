@@ -1,0 +1,197 @@
+{
+  "fabric_modules": [], 
+  "storage_objects": [
+    {
+      "attributes": {
+        "block_size": 512, 
+        "emulate_3pc": 1, 
+        "emulate_caw": 1, 
+        "emulate_dpo": 0, 
+        "emulate_fua_read": 0, 
+        "emulate_fua_write": 1, 
+        "emulate_model_alias": 1, 
+        "emulate_rest_reord": 0, 
+        "emulate_tas": 1, 
+        "emulate_tpu": 0, 
+        "emulate_tpws": 0, 
+        "emulate_ua_intlck_ctrl": 0, 
+        "emulate_write_cache": 0, 
+        "enforce_pr_isids": 1, 
+        "force_pr_aptpl": 0, 
+        "is_nonrot": 1, 
+        "max_unmap_block_desc_count": 1, 
+        "max_unmap_lba_count": 8192, 
+        "max_write_same_len": 65535, 
+        "optimal_sectors": 8192, 
+        "pi_prot_format": 0, 
+        "pi_prot_type": 0, 
+        "queue_depth": 128, 
+        "unmap_granularity": 8192, 
+        "unmap_granularity_alignment": 4194304
+      }, 
+      "dev": "/dev/rbd1", 
+      "name": "ovirt", 
+      "plugin": "block", 
+      "readonly": false, 
+      "write_back": false, 
+      "wwn": "b800ddf1-49ba-4fd0-aa3d-1e1fdfd19516"
+    }, 
+    {
+      "attributes": {
+        "block_size": 512, 
+        "emulate_3pc": 1, 
+        "emulate_caw": 1, 
+        "emulate_dpo": 0, 
+        "emulate_fua_read": 0, 
+        "emulate_fua_write": 1, 
+        "emulate_model_alias": 1, 
+        "emulate_rest_reord": 0, 
+        "emulate_tas": 1, 
+        "emulate_tpu": 0, 
+        "emulate_tpws": 0, 
+        "emulate_ua_intlck_ctrl": 0, 
+        "emulate_write_cache": 0, 
+        "enforce_pr_isids": 1, 
+        "force_pr_aptpl": 0, 
+        "is_nonrot": 1, 
+        "max_unmap_block_desc_count": 1, 
+        "max_unmap_lba_count": 8192, 
+        "max_write_same_len": 65535, 
+        "optimal_sectors": 8192, 
+        "pi_prot_format": 0, 
+        "pi_prot_type": 0, 
+        "queue_depth": 128, 
+        "unmap_granularity": 8192, 
+        "unmap_granularity_alignment": 4194304
+      }, 
+      "dev": "/dev/rbd0", 
+      "name": "storage", 
+      "plugin": "block", 
+      "readonly": false, 
+      "write_back": false, 
+      "wwn": "9110b1e3-113b-45df-b19b-2fbe400243f5"
+    }
+  ], 
+  "targets": [
+    {
+      "fabric": "iscsi", 
+      "tpgs": [
+        {
+          "attributes": {
+            "authentication": 0, 
+            "cache_dynamic_acls": 1, 
+            "default_cmdsn_depth": 64, 
+            "default_erl": 0, 
+            "demo_mode_discovery": 1, 
+            "demo_mode_write_protect": 0, 
+            "generate_node_acls": 1, 
+            "login_timeout": 15, 
+            "netif_timeout": 2, 
+            "prod_mode_write_protect": 0, 
+            "t10_pi": 0
+          }, 
+          "enable": true, 
+          "luns": [
+            {
+              "index": 0, 
+              "storage_object": "/backstores/block/ovirt"
+            }
+          ], 
+          "node_acls": [], 
+          "parameters": {
+            "AuthMethod": "CHAP,None", 
+            "DataDigest": "CRC32C,None", 
+            "DataPDUInOrder": "Yes", 
+            "DataSequenceInOrder": "Yes", 
+            "DefaultTime2Retain": "20", 
+            "DefaultTime2Wait": "2", 
+            "ErrorRecoveryLevel": "0", 
+            "FirstBurstLength": "65536", 
+            "HeaderDigest": "CRC32C,None", 
+            "IFMarkInt": "2048~65535", 
+            "IFMarker": "No", 
+            "ImmediateData": "Yes", 
+            "InitialR2T": "Yes", 
+            "MaxBurstLength": "262144", 
+            "MaxConnections": "1", 
+            "MaxOutstandingR2T": "1", 
+            "MaxRecvDataSegmentLength": "8192", 
+            "MaxXmitDataSegmentLength": "262144", 
+            "OFMarkInt": "2048~65535", 
+            "OFMarker": "No", 
+            "TargetAlias": "LIO Target"
+          }, 
+          "portals": [
+            {
+              "ip_address": "127.0.0.1", 
+              "iser": false, 
+              "port": 3260
+            }
+          ], 
+          "tag": 1
+        }
+      ], 
+      "wwn": "iqn.2016-08.ru.gtest:ovirt"
+    }, 
+    {
+      "fabric": "iscsi", 
+      "tpgs": [
+        {
+          "attributes": {
+            "authentication": 0, 
+            "cache_dynamic_acls": 1, 
+            "default_cmdsn_depth": 64, 
+            "default_erl": 0, 
+            "demo_mode_discovery": 1, 
+            "demo_mode_write_protect": 0, 
+            "generate_node_acls": 1, 
+            "login_timeout": 15, 
+            "netif_timeout": 2, 
+            "prod_mode_write_protect": 0, 
+            "t10_pi": 0
+          }, 
+          "enable": true, 
+          "luns": [
+            {
+              "index": 0, 
+              "storage_object": "/backstores/block/storage"
+            }
+          ], 
+          "node_acls": [], 
+          "parameters": {
+            "AuthMethod": "CHAP,None", 
+            "DataDigest": "CRC32C,None", 
+            "DataPDUInOrder": "Yes", 
+            "DataSequenceInOrder": "Yes", 
+            "DefaultTime2Retain": "20", 
+            "DefaultTime2Wait": "2", 
+            "ErrorRecoveryLevel": "0", 
+            "FirstBurstLength": "65536", 
+            "HeaderDigest": "CRC32C,None", 
+            "IFMarkInt": "2048~65535", 
+            "IFMarker": "No", 
+            "ImmediateData": "Yes", 
+            "InitialR2T": "Yes", 
+            "MaxBurstLength": "262144", 
+            "MaxConnections": "1", 
+            "MaxOutstandingR2T": "1", 
+            "MaxRecvDataSegmentLength": "8192", 
+            "MaxXmitDataSegmentLength": "262144", 
+            "OFMarkInt": "2048~65535", 
+            "OFMarker": "No", 
+            "TargetAlias": "LIO Target"
+          }, 
+          "portals": [
+            {
+              "ip_address": "127.0.0.1", 
+              "iser": false, 
+              "port": 3260
+            }
+          ], 
+          "tag": 1
+        }
+      ], 
+      "wwn": "iqn.2016-08.ru.gtest:storage"
+    }
+  ]
+}
